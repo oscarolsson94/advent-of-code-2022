@@ -2,19 +2,6 @@ const battles = RAW_INPUT.split(/\r?\n/);
 
 let totalScore = 0;
 
-const checkWinner = (opponentsValue, playerValue) => {
-  if (opponentsValue === playerValue) return "draw";
-
-  if (
-    (opponentsValue === "A" && playerValue === "B") ||
-    (opponentsValue === "B" && playerValue === "C") ||
-    (opponentsValue === "C" && playerValue === "A")
-  )
-    return "win";
-
-  return "lost";
-};
-
 const getChoiceValue = (choice) => {
   if (choice === "A") return 1;
   if (choice === "B") return 2;
