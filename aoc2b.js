@@ -14,7 +14,7 @@ const getSupposedOutcomeValue = (manualValue) => {
   return null;
 };
 
-const getPlayerValue = (outcomeValue, opponentsValue) => {
+const getPlayerChoice = (outcomeValue, opponentsValue) => {
   if (outcomeValue === 3) return opponentsValue;
 
   if (!outcomeValue) {
@@ -36,7 +36,7 @@ battles.forEach((battle) => {
 
   const outcomeValue = getSupposedOutcomeValue(manualValue);
 
-  const playerValue = getPlayerValue(outcomeValue, opponentsValue);
+  const playerValue = getPlayerChoice(outcomeValue, opponentsValue);
 
   const choiceValue = getChoiceValue(playerValue);
 
