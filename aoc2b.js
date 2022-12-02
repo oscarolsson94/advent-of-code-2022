@@ -36,9 +36,9 @@ battles.forEach((battle) => {
 
   const outcomeValue = getSupposedOutcomeValue(manualValue);
 
-  const playerValue = getPlayerChoice(outcomeValue, opponentsValue);
+  const playerChoice = getPlayerChoice(outcomeValue, opponentsValue);
 
-  const choiceValue = getChoiceValue(playerValue);
+  const choiceValue = getChoiceValue(playerChoice);
 
   let roundScore = 0;
 
