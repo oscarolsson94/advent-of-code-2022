@@ -14,29 +14,29 @@ const getSupposedOutcomeValue = (manualValue) => {
   return null;
 };
 
-const getPlayerChoice = (outcomeValue, opponentsValue) => {
-  if (outcomeValue === 3) return opponentsValue;
+const getPlayerChoice = (outcomeValue, opponentsChoice) => {
+  if (outcomeValue === 3) return opponentsChoice;
 
   if (!outcomeValue) {
-    if (opponentsValue === "A") return "C";
-    if (opponentsValue === "B") return "A";
-    if (opponentsValue === "C") return "B";
+    if (opponentsChoice === "A") return "C";
+    if (opponentsChoice === "B") return "A";
+    if (opponentsChoice === "C") return "B";
   }
 
   if (outcomeValue === 6) {
-    if (opponentsValue === "A") return "B";
-    if (opponentsValue === "B") return "C";
-    if (opponentsValue === "C") return "A";
+    if (opponentsChoice === "A") return "B";
+    if (opponentsChoice === "B") return "C";
+    if (opponentsChoice === "C") return "A";
   }
 };
 
 battles.forEach((battle) => {
   const manualValue = battle[2];
-  const opponentsValue = battle[0];
+  const opponentsChoice = battle[0];
 
   const outcomeValue = getSupposedOutcomeValue(manualValue);
 
-  const playerChoice = getPlayerChoice(outcomeValue, opponentsValue);
+  const playerChoice = getPlayerChoice(outcomeValue, opponentsChoice);
 
   const choiceValue = getChoiceValue(playerChoice);
 
