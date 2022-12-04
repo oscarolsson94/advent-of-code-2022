@@ -1,8 +1,7 @@
-function countFullyContainedPairs(pairs) {
+const countFullyContainedPairs = (pairs) => {
   let numFullyContainedPairs = 0;
 
   for (const pair of pairs) {
-    // Split each assignment into start and end
     const [assignment1, assignment2] = pair.split(",");
     const [assignment1Start, assignment1End] = assignment1
       .split("-")
@@ -11,7 +10,6 @@ function countFullyContainedPairs(pairs) {
       .split("-")
       .map(Number);
 
-    // Check if one range fully contains the other
     if (
       assignment1Start <= assignment2Start &&
       assignment1End >= assignment2End
